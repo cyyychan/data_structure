@@ -1,12 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include "test_sqlist.h"
-#include "sqlist.h"
+#include "test_linkedlist.h"
+#include "linkedlist.h"
 
 
 int main(){
     Status s;
-    SqList list;
+    Ptr list=NULL;
     ElemType data[11] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     s = testCreateList(&list, data, 10);
     s = testRetrivalPriorNext(&list, 5);

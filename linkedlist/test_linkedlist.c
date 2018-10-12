@@ -1,9 +1,9 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include "test_sqlist.h"
+#include "test_linkedlist.h"
 
 
-Status testCreateList(SqListPtr l, ElemType data[], int n){
+Status testCreateList(LinkedListPtr l, ElemType data[], int n){
     int i;
     Status s = fail;
     s = listInit(l);
@@ -17,7 +17,7 @@ Status testCreateList(SqListPtr l, ElemType data[], int n){
     return s;
 }
 
-Status testClearList(SqListPtr l){
+Status testClearList(LinkedListPtr l){
     Status s = fail;
     if(!listEmpty(l)){
         listClear(l);
@@ -28,7 +28,7 @@ Status testClearList(SqListPtr l){
     return s;
 }
 
-Status testRetrivalPriorNext(SqListPtr l, int pos){
+Status testRetrivalPriorNext(LinkedListPtr l, int pos){
     Status s = range_over;
     ElemType e, p, n;
     s = listRetrival(l, pos, &e);
@@ -45,7 +45,7 @@ Status testRetrivalPriorNext(SqListPtr l, int pos){
     return s;
 }
 
-Status testLocate(SqListPtr l, ElemType elem){
+Status testLocate(LinkedListPtr l, ElemType elem){
     Status s = range_over;
     int pos;
     s = listLocate(l, elem, &pos);
@@ -56,13 +56,12 @@ Status testLocate(SqListPtr l, ElemType elem){
     return s;
 }
 
-Status testLength(SqListPtr l){
+Status testLength(LinkedListPtr l){
     Status s = fail;
     int length;
     length = listSize(l);
-    if(length >= 0 && length <= l->list_size){
-        s = sucess;
-        printf("表长为：%d\n", length);
-    }
+    s = sucess;
+    printf("表长为：%d\n", length);
     return s;
 }
+

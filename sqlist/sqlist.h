@@ -4,7 +4,7 @@
 #define bool int
 
 typedef enum Status{
-    sucess, fail, fatal, range_error
+    sucess, fail, fatal, range_over
 }Status;
 
 typedef int ElemType;
@@ -13,7 +13,7 @@ typedef struct SqList{
     ElemType *elem;
     int length;
     int list_size;
-}SqList, *Ptr, *SqListPtr;
+}SqList, *SqListPtr;
 
 Status listInit(SqListPtr l);
 void listDestory(SqListPtr l);

@@ -45,7 +45,7 @@ int listSize(SqListPtr l){
 }
 
 Status listRetrival(SqListPtr l, int pos, ElemType *elem){
-    Status s = range_error;
+    Status s = range_over;
     if(l){
         if(pos >= 1 && pos <= l->length){
             *elem = l->elem[pos];
@@ -56,7 +56,7 @@ Status listRetrival(SqListPtr l, int pos, ElemType *elem){
 }
 
 Status listLocate(SqListPtr l, ElemType elem, int *pos){
-    Status s = range_error;
+    Status s = range_over;
     int i = 1;
     if(l){
         while(i <= l->length){
@@ -72,7 +72,7 @@ Status listLocate(SqListPtr l, ElemType elem, int *pos){
 }
 
 Status listInsert(SqListPtr l, int pos, ElemType elem){
-    Status s = range_error;
+    Status s = range_over;
     int i;
     if(l->length + 1 <= l->list_size){
         if(pos >= 1 && pos <= l->length + 1){
@@ -88,7 +88,7 @@ Status listInsert(SqListPtr l, int pos, ElemType elem){
 }
 
 Status listDelete(SqListPtr l, int pos){
-    Status s = range_error;
+    Status s = range_over;
     int i;
     if(l->length - 1 >= 0){
         if(pos >= 1 && pos <= l->length){
@@ -103,7 +103,7 @@ Status listDelete(SqListPtr l, int pos){
 }
 
 Status listPrior(SqListPtr l, int pos, ElemType *elem){
-    Status s = range_error;
+    Status s = range_over;
     if(l){
         if(pos > 1 && pos <= l->length){
             *elem = l->elem[pos-1];
@@ -114,7 +114,7 @@ Status listPrior(SqListPtr l, int pos, ElemType *elem){
 }
 
 Status listNext(SqListPtr l, int pos, ElemType *elem){
-    Status s = range_error;
+    Status s = range_over;
     if(l){
         if(pos >= 1 && pos < l->length){
             *elem = l->elem[pos+1];
