@@ -76,7 +76,7 @@ void chooseSort(ElemType *A, int n)
 
 void mergeSort(ElemType *A, int n)
 /*
-    归并排序，采用递归思想
+    归并排序，采用递归思想， 了解算法步骤
 */
 {
     ElemType *Temp;
@@ -131,12 +131,26 @@ void _merge(ElemType *A, ElemType *Temp, int lpos, int rpos, int right_end)
     {
         A[right_end] = Temp[right_end];//!!!注意
     }
-    printf("%d\n", num);
 }
 
-void changeSort(ElemType *A)
+void bubbleSort(ElemType *A, int n)
 {
-
+    ElemType temp;
+    int i, j, last_pos;
+    for(j = n; j > 1; j = last_pos)
+    {
+        last_pos = 1;//初始化
+        for(i = 1; i < j; i++)
+        {
+            if(A[i] > A[i + 1])
+            {
+                temp = A[i];
+                A[i] = A[i+1];
+                A[i+1] = temp;
+                last_pos = i;
+            }
+        }
+    }
 }
 void quickSort(ElemType *A)
 {

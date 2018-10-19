@@ -29,9 +29,11 @@ int main()
             break;
         case 3:
             printf("归并排序结果为：\n");
+            mergeSort(A, 10);
             break;
         case 4:
             printf("交换排序结果为：\n");
+            bubbleSort(A, 10);
             break;
         case 5:
             printf("快速排序结果为：\n");
@@ -44,7 +46,7 @@ int main()
             break;
     }
     */
-    mergeSort(A, 10);
+    bubbleSort(A, 10);
     for(i = 1; i <= 10; i++)
     {
         printf("%d\t", A[i]);
