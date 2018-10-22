@@ -10,9 +10,8 @@ int main()
     int flag = 0;
     int c_start = 0;
     int time = 0;
-    /*
     printf("0:插入排序；1：希尔排序；2：选择排序；3：归并排序；4：交换排序；5：快速排序；6：基数排序\n");
-    scanf("请输入演示算法类型：%d", &flag);
+    scanf("%d", &flag);
     switch(flag)
     {
         case 0:
@@ -37,16 +36,16 @@ int main()
             break;
         case 5:
             printf("快速排序结果为：\n");
+            quickSort(A, 1, 10);
             break;
         case 6:
             printf("基数排序结果为：\n");
+            baseSort(A, 10);
             break;
         default:
             printf("输入有误：\n");
             break;
     }
-    */
-    bubbleSort(A, 10);
     for(i = 1; i <= 10; i++)
     {
         printf("%d\t", A[i]);
