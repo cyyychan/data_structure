@@ -101,3 +101,26 @@ void visit(DataType data)
 {
     printf("%d\t", data);
 }
+
+void bfOrder(BTree R, int n)
+{
+    BTree queue[n+1];
+    int front = 0;
+    int rear = 1;
+    queue[rear] = R;
+    while(front != rear)
+    {
+        front++;
+        visit(queue[front]->data);
+        if(queue[front]->lchild != NULL)
+        {
+            rear++;
+            queue[rear] = queue[front]->lchild;
+        }
+        if(queue[front]->rchild != NULL)
+        {
+            rear++;
+            queue[rear] = queue[front]->rchild;
+        }
+    }
+}

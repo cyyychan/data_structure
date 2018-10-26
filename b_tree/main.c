@@ -11,20 +11,23 @@ int main()
     if(s == sucess)
     {
         s = createCBTree(A, 10, &bt);
-        /*
-        if(s == sucess)
-            printf("%d", bt->data);
-        else
-            printf("完全二叉树建立失败");
-        */
     }
-    printf("先序遍历：\n");
-    preOrder(bt);
-    printf("\n中序遍历：\n");
-    midOrder(bt);
-    printf("\n后序遍历：\n");
-    laOrder(bt);
-    //传递指针进函数可以释放内存
-    destroyBTree(bt);
+    if(s == sucess)
+    {
+        printf("先序遍历：\n");
+        preOrder(bt);
+        printf("\n中序遍历：\n");
+        midOrder(bt);
+        printf("\n后序遍历：\n");
+        laOrder(bt);
+        printf("\n层次遍历：\n");
+        bfOrder(bt, 10);
+        //传递指针进函数可以释放内存
+        destroyBTree(bt);
+    }
+    else
+    {
+        printf("二叉树建立失败");
+    }
     return 1;
 }

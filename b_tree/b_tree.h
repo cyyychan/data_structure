@@ -18,4 +18,5 @@ void destroyBTree(BTree);
 void preOrder(BTree);
 void midOrder(BTree);
 void laOrder(BTree);
+void bfOrder(BTree, int);
 void visit(DataType);
